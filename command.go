@@ -229,6 +229,11 @@ func (c *Command) Context() context.Context {
 	return c.ctx
 }
 
+// SetContext overrides the command's underlying context.
+func (c *Command) SetContext(ctx context.Context) {
+	c.ctx = ctx
+}
+
 // SetArgs sets arguments for the command. It is set to os.Args[1:] by default, if desired, can be overridden
 // particularly useful when testing.
 func (c *Command) SetArgs(a []string) {
